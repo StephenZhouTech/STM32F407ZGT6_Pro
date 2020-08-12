@@ -3,6 +3,7 @@
 #include "log.h"
 #include "led.h"
 #include "lcd_st7735s.h"
+#include "lcd_st7735s_api.h"
 
 #define UART_DEBUG      1
 #define USE_LED         1
@@ -24,36 +25,21 @@ int main(void)
     LOG_DEBUG("**********************************************************");
     LOG_DEBUG("************** Board Test Project Running ****************");
     LOG_DEBUG("**********************************************************");
+    LOG_INFO("log Ready...");
+    LOG_INFO("led Ready...");
 
     LCD_ST7735S_Init();
-    SPI1_ReadWriteByte(0x01);
-    SPI1_ReadWriteByte(0x02);
-    SPI1_ReadWriteByte(0x03);
-    SPI1_ReadWriteByte(0x04);
-    SPI1_ReadWriteByte(0x05);
-    SPI1_ReadWriteByte(0x06);
-    SPI1_ReadWriteByte(0x07);
-    SPI1_ReadWriteByte(0x08);
-    SPI1_ReadWriteByte(0x09);
-    SPI1_ReadWriteByte(0x0A);
-    SPI1_ReadWriteByte(0x0B);
-    SPI1_ReadWriteByte(0x0C);
-    SPI1_ReadWriteByte(0x0D);
-    SPI1_ReadWriteByte(0x0E);
-    SPI1_ReadWriteByte(0x0F);
+    LOG_INFO("LCD Ready...");
+
+    //LCD_Fill(0, 0, 128, 15, BLUE);
+    LCD_ShowString(1,  0, "0. LED Ready...", BLACK, WHITE, 12, 0);
+    LCD_ShowString(1, 16, "1. LOG Ready...", BLACK, WHITE, 12, 0);
+    LCD_ShowString(1, 32, "2. LCD Ready...", BLACK, WHITE, 12, 0);
 
     while(1)
     {
-        LOG_DEBUG("counter:%d",counter++);
-        LCD_CS_LOW();
-        LCD_BLK_LOW();
-        LCD_RST_LOW();
-        LCD_CTR_LOW();
+        LOG_DEBUG("System Running Counter:%d",counter++);
         delay_ms(100);
-        LCD_CS_HIGH();
-        LCD_BLK_HIGH();
-        LCD_RST_HIGH();
-        LCD_CTR_HIGH();
         BspLEDOn(LED_2 | LED_3 | LED_4);
         delay_ms(100);
         BspLEDOff(LED_2 | LED_3 | LED_4);

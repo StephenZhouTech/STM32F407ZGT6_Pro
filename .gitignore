@@ -1,1 +1,3 @@
 applications/**/_out
+applications/**/*.uvguix.*
+JLinkLog.txt

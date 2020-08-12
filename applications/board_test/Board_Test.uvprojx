@@ -666,6 +666,11 @@
               <FileType>1</FileType>
               <FilePath>..\..\components\lcd\st7735s\lcd_st7735s.c</FilePath>
             </File>
+            <File>
+              <FileName>lcd_st7735s_api.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\components\lcd\st7735s\lcd_st7735s_api.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
