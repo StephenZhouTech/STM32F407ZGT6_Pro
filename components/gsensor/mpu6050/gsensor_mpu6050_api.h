@@ -1,0 +1,6 @@
+#ifndef __GSENSOR_MPU6050_API_H__
+#define __GSENSOR_MPU6050_API_H__
+
+
+
+#endif // __GSENSOR_MPU6050_API_H__
