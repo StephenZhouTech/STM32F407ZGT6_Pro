@@ -47,7 +47,7 @@
             <InvalidFlash>1</InvalidFlash>
           </TargetStatus>
           <OutputDirectory>.\_out\obj\</OutputDirectory>
-          <OutputName>Board_Test</OutputName>
+          <OutputName>mpu6050Demo</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
           <CreateHexFile>1</CreateHexFile>
@@ -365,7 +365,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F40_41xxx,USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\cpu\cortex_m4;..\..\components\delay;..\..\components\sys;..\..\components\usart;..\..\libraries\stm32f407_fw_lib\include;.\include;..\..\components\log;..\..\bsp\include;..\..\components\lcd\st7735s</IncludePath>
+              <IncludePath>..\..\cpu\cortex_m4;..\..\components\delay;..\..\components\sys;..\..\components\usart;..\..\libraries\stm32f407_fw_lib\include;.\include;..\..\components\log;..\..\bsp\include;..\..\components\lcd\st7735s;..\..\components\gsensor\mpu6050</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -680,6 +680,26 @@
               <FileName>led.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\bsp\src\led.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>mpu6050</GroupName>
+          <Files>
+            <File>
+              <FileName>gsensor_mpu6050_api.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\components\gsensor\mpu6050\gsensor_mpu6050_api.c</FilePath>
+            </File>
+            <File>
+              <FileName>gsensor_mpu6050_driver.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\components\gsensor\mpu6050\gsensor_mpu6050_driver.c</FilePath>
+            </File>
+            <File>
+              <FileName>mpu6050_i2c.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\components\gsensor\mpu6050\mpu6050_i2c.c</FilePath>
             </File>
           </Files>
         </Group>
